@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Gewenbo", url: "https://psyverse.fun" }],
   alternates: { canonical: "/", languages: { en: "/", "zh-CN": "/", "x-default": "/" } },
   openGraph: {
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "Tech Civilization Atlas · 科技文明图谱 — Technology Centers, Innovation Cities & Scientific Power" }],
     title: TITLE_EN,
     description:
       "Innovation pools into a handful of glowing brains. A bilingual atlas of 16 tech hubs, the semiconductor supply chain, talent networks, and a 9-axis civilisation technology index.",
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     alternateLocale: ["zh_CN"],
   },
   twitter: {
+    images: ["/twitter-image.png"],
     card: "summary_large_image",
     title: TITLE_EN,
     description: "Silicon Valley, Shenzhen, Taipei, Beijing… technology centers are modern civilisation's brains. A bilingual planetary innovation atlas.",
