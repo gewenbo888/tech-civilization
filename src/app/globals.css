@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --term: #06090f;
+  --cyan: #38e1ff;
+  --sig: #4ade80;
+  --amberd: #f5a623;
+  --viol: #8b7cff;
+  --slate: #e6edf5;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--term);
+  color: var(--slate);
+}
+
+body {
+  background-color: #04060c;
+  background-image:
+    radial-gradient(ellipse 1100px 560px at 16% -10%, rgba(56, 225, 255, 0.10), transparent 60%),
+    radial-gradient(ellipse 900px 520px at 92% 4%, rgba(139, 124, 255, 0.10), transparent 62%),
+    radial-gradient(ellipse 1200px 620px at 50% 120%, rgba(255, 93, 177, 0.07), transparent 60%);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  letter-spacing: 0.005em;
+}
+
+::selection { background: rgba(56, 225, 255, 0.35); color: #04060c; }
+
+.display { font-family: "Space Grotesk", system-ui, sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+.zh { font-family: "Noto Sans SC", sans-serif; }
+.label-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.66rem; color: #5fdcff;
+}
+.data-mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+
+.hud-text {
+  color: #9aeaff;
+  text-shadow: 0 0 20px rgba(56, 225, 255, 0.6), 0 0 60px rgba(139, 124, 255, 0.3);
+}
+
+/* glassmorphism panel */
+.glass {
+  background: linear-gradient(160deg, rgba(15, 20, 34, 0.72), rgba(6, 9, 15, 0.9));
+  border: 1px solid rgba(56, 225, 255, 0.12);
+  backdrop-filter: blur(10px);
+}
+.glass:hover { border-color: rgba(56, 225, 255, 0.3); }
+
+.rule-hud {
+  background: linear-gradient(90deg, transparent, rgba(56,225,255,0.5) 18%, rgba(139,124,255,0.4) 82%, transparent);
+}
+
+/* scanline grid backdrop */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(56,225,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,225,255,0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@keyframes flow { to { stroke-dashoffset: -40; } }
+.flow { stroke-dasharray: 5 7; animation: flow 1.5s linear infinite; }
+
+@keyframes pulse { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+.pulse { animation: pulse 2.4s ease-in-out infinite; }
+
+@keyframes riseIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.rise-in { animation: riseIn 0.9s cubic-bezier(0.2,0.7,0.2,1) both; }
+.lang-fade { animation: riseIn 0.4s ease both; }
+
+/* ticker blink */
+@keyframes blink { 50% { opacity: 0.25; } }
+.blink { animation: blink 1.4s step-end infinite; }
+
+::-webkit-scrollbar { width: 10px; background: #04060c; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #161d2e, #1f2940); border-radius: 5px; }
